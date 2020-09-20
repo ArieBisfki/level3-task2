@@ -4,24 +4,64 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingHorizontal="10dp"
+    android:paddingTop="10dp"
     tools:context=".AddPortalFragment">
 
     <TextView
-        android:id="@+id/textview_second"
-        android:layout_width="wrap_content"
+        android:id="@+id/txtTitle"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/button_second"
+        android:text="@string/title"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button_second"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/etTitle"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/previous"
+        android:inputType="text"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
+
+    <TextView
+        android:id="@+id/txtUrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/url"
+        android:textSize="12sp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etTitle" />
+
+    <EditText
+        android:id="@+id/etUrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textUri"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtUrl" />
+
+    <Button
+        android:id="@+id/btnAddPortal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#3700b3"
+        android:text="@string/add_portal"
+        android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_second" />
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
