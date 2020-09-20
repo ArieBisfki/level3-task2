@@ -1,8 +1,10 @@
 package com.example.madlevel3task2
 
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.browser.customtabs.CustomTabsIntent
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_portal.view.*
 
@@ -12,6 +14,13 @@ class PortalAdapter(private val portals: List<Portal>) : RecyclerView.Adapter<Po
         fun databind(portal: Portal) {
             itemView.txtTitle.text = portal.title
             itemView.txtUrl.text = portal.url
+            itemView.setOnClickListener {
+                val customTabsIntent = CustomTabsIntent.Builder()
+                    .enableUrlBarHiding()
+                    .setColorScheme(CustomTabsIntent.COLOR_SCHEME_DARK)
+                    .build()
+                customTabsIntent.launchUrl(itemView.context, Uri.parse(portal.url))
+            }
         }
     }
 
